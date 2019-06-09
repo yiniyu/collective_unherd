@@ -10,7 +10,7 @@ class MyQuestionsController < ApplicationController
   end
 
   def index
-    @my_questions = MyQuestion.all
+    @my_questions = MyQuestion.page(params[:page]).per(10)
 
     render("my_question_templates/index.html.erb")
   end
