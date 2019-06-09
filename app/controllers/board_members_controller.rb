@@ -55,6 +55,14 @@ class BoardMembersController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @board_member = BoardMember.find(params.fetch("id_to_remove"))
+
+    @board_member.destroy
+
+    redirect_to("/users/#{@board_member.user_id}", notice: "BoardMember deleted successfully.")
+  end
+
   def destroy_row
     @board_member = BoardMember.find(params.fetch("id_to_remove"))
 

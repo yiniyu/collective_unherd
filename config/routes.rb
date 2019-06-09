@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_committee/:id_to_remove", { :controller => "committees", :action => "destroy_row" })
+  get("/delete_committee_from_user/:id_to_remove", { :controller => "committees", :action => "destroy_row_from_user" })
+  get("/delete_committee_from_board_members/:id_to_remove", { :controller => "committees", :action => "destroy_row_from_board_members" })
 
   #------------------------------
 
@@ -46,6 +48,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_response/:id_to_remove", { :controller => "responses", :action => "destroy_row" })
+  get("/delete_response_from_question/:id_to_remove", { :controller => "responses", :action => "destroy_row_from_question" })
+  get("/delete_response_from_board_members/:id_to_remove", { :controller => "responses", :action => "destroy_row_from_board_members" })
 
   #------------------------------
 
@@ -65,6 +69,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_my_question/:id_to_remove", { :controller => "my_questions", :action => "destroy_row" })
+  get("/delete_my_question_from_user/:id_to_remove", { :controller => "my_questions", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -84,6 +89,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_board_member/:id_to_remove", { :controller => "board_members", :action => "destroy_row" })
+  get("/delete_board_member_from_user/:id_to_remove", { :controller => "board_members", :action => "destroy_row_from_user" })
 
   #------------------------------
 

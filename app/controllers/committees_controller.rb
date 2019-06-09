@@ -55,6 +55,22 @@ class CommitteesController < ApplicationController
     end
   end
 
+  def destroy_row_from_board_members
+    @committee = Committee.find(params.fetch("id_to_remove"))
+
+    @committee.destroy
+
+    redirect_to("/board_members/#{@committee.board_members_id}", notice: "Committee deleted successfully.")
+  end
+
+  def destroy_row_from_user
+    @committee = Committee.find(params.fetch("id_to_remove"))
+
+    @committee.destroy
+
+    redirect_to("/users/#{@committee.user_id}", notice: "Committee deleted successfully.")
+  end
+
   def destroy_row
     @committee = Committee.find(params.fetch("id_to_remove"))
 

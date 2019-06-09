@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Board Members
+
+    <a data-toggle="collapse" href="#user_board_members_new_form">
+      Add board member
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.board_members.each do |board_member| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/board_members/<%= board_member.id %>">
+          <%= board_member.name %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

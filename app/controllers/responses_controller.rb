@@ -57,6 +57,22 @@ class ResponsesController < ApplicationController
     end
   end
 
+  def destroy_row_from_board_members
+    @response = Response.find(params.fetch("id_to_remove"))
+
+    @response.destroy
+
+    redirect_to("/board_members/#{@response.board_members_id}", notice: "Response deleted successfully.")
+  end
+
+  def destroy_row_from_question
+    @response = Response.find(params.fetch("id_to_remove"))
+
+    @response.destroy
+
+    redirect_to("/my_questions/#{@response.user_id}", notice: "Response deleted successfully.")
+  end
+
   def destroy_row
     @response = Response.find(params.fetch("id_to_remove"))
 

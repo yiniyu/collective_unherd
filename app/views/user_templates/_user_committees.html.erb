@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Committees
+
+    <a data-toggle="collapse" href="#user_committees_new_form">
+      Add committee
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.committees.each do |committee| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/committees/<%= committee.id %>">
+          <%= committee.created_at %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

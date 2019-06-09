@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    My Questions
+
+    <a data-toggle="collapse" href="#user_my_questions_new_form">
+      Add my question
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.my_questions.each do |my_question| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/my_questions/<%= my_question.id %>">
+          <%= my_question.committee_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>
