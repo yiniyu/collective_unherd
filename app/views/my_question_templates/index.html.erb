@@ -84,7 +84,11 @@
 
         <!-- Display my_question.user_id start -->
         <td>
-          <%= my_question.user.email %>
+          <% if my_question.user.present? %>
+            <a href="/users/<%= my_question.user.id %>">
+              <%= my_question.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display my_question.user_id end -->
 

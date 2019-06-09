@@ -34,7 +34,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @response.user_id %>
+        <% if @response.question.present? %>
+          <a href="/my_questions/<%= @response.user_id %>">
+            <%= @response.question.committee_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -61,7 +65,11 @@
       </dt>
       <!-- Display board_members_id start -->
       <dd>
-        <%= @response.board_members_id %>
+        <% if @response.board_members.present? %>
+          <a href="/board_members/<%= @response.board_members_id %>">
+            <%= @response.board_members.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display board_members_id end -->
 

@@ -74,7 +74,11 @@
 
         <!-- Display board_member.user_id start -->
         <td>
-          <%= board_member.user.email %>
+          <% if board_member.user.present? %>
+            <a href="/users/<%= board_member.user.id %>">
+              <%= board_member.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display board_member.user_id end -->
 

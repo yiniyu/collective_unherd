@@ -68,13 +68,21 @@
 
         <!-- Display committee.board_members_id start -->
         <td>
-          <%= committee.board_members.name %>
+          <% if committee.board_members.present? %>
+            <a href="/board_members/<%= committee.board_members.id %>">
+              <%= committee.board_members.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display committee.board_members_id end -->
 
         <!-- Display committee.user_id start -->
         <td>
-          <%= committee.user.email %>
+          <% if committee.user.present? %>
+            <a href="/users/<%= committee.user.id %>">
+              <%= committee.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display committee.user_id end -->
 

@@ -66,7 +66,11 @@
 
         <!-- Display response.user_id start -->
         <td>
-          <%= response.question.committee_id %>
+          <% if response.question.present? %>
+            <a href="/my_questions/<%= response.question.id %>">
+              <%= response.question.committee_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display response.user_id end -->
 
@@ -84,7 +88,11 @@
 
         <!-- Display response.board_members_id start -->
         <td>
-          <%= response.board_members.name %>
+          <% if response.board_members.present? %>
+            <a href="/board_members/<%= response.board_members.id %>">
+              <%= response.board_members.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display response.board_members_id end -->
 

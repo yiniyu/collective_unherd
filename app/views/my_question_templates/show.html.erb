@@ -65,7 +65,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @my_question.user_id %>
+        <% if @my_question.user.present? %>
+          <a href="/users/<%= @my_question.user_id %>">
+            <%= @my_question.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
