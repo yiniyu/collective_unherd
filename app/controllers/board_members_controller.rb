@@ -10,7 +10,7 @@ class BoardMembersController < ApplicationController
   end
 
   def index
-    @board_members = BoardMember.all
+    @board_members = current_user.board_members.page(params[:page]).per(10)
 
     render("board_member_templates/index.html.erb")
   end
