@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.my_questions.each do |my_question| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/my_questions/<%= my_question.id %>">
           <%= my_question.committee_id %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

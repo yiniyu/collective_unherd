@@ -5,39 +5,25 @@
 
 <hr>
 
-<!-- Form board_member start -->
 <form action="/create_board_member" method="post">
-<!-- Form board_member end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <textarea id="name" name="name" class="form-control" rows="3"></textarea>
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for committee_id start -->
   <div class="form-group">
     <label for="committee_id">
       Committee
     </label>
 
-    <!-- Input for committee_id start -->
     <input type="text" id="committee_id" name="committee_id" class="form-control">
-    <!-- Input for committee_id end -->
   </div>
-  <!-- Label and input for committee_id end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create board member

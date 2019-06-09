@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @board_member.responses.each do |response| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/responses/<%= response.id %>">
           <%= response.user_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_response_from_board_members/<%= response.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="board_member_responses_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "board_member_templates/board_member_responses_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

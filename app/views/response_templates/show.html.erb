@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link response start -->
       <div class="col">
         <a href="/responses/<%= @response.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit response
         </a>
       </div>
-      <!-- Edit link response end -->
 
-      <!-- Delete link response start -->
       <div class="col">
         <a href="/delete_response/<%= @response.id %>" class="btn btn-block btn-outline-secondary">
           Delete response
         </a>
       </div>
-      <!-- Delete link response end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @response.question.present? %>
           <a href="/my_questions/<%= @response.user_id %>">
@@ -40,30 +35,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         My questions
       </dt>
-      <!-- Display my_questions_id start -->
       <dd>
         <%= @response.my_questions_id %>
       </dd>
-      <!-- Display my_questions_id end -->
 
       <dt>
         Response
       </dt>
-      <!-- Display response start -->
       <dd>
         <%= @response.response %>
       </dd>
-      <!-- Display response end -->
 
       <dt>
         Board members
       </dt>
-      <!-- Display board_members_id start -->
       <dd>
         <% if @response.board_members.present? %>
           <a href="/board_members/<%= @response.board_members_id %>">
@@ -71,28 +60,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display board_members_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@response.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@response.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

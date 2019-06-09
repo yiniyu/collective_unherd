@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @committee.present? %>
   <% if @committee.errors.any? %>
     <% @committee.errors.full_messages.each do |message| %>
@@ -16,39 +15,25 @@
 
 <hr>
 
-<!-- Form committee start -->
 <form action="/create_committee" method="post">
-<!-- Form committee end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @committee.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for board_members_id start -->
   <div class="form-group">
     <label for="board_members_id">
       Board members
     </label>
 
-    <!-- Input for board_members_id start -->
     <%= select_tag(:board_members_id, options_from_collection_for_select(BoardMember.all, :id, :name, @committee.board_members_id), :class => "form-control") %>
-    <!-- Input for board_members_id end -->
   </div>
-  <!-- Label and input for board_members_id end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create committee
