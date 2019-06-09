@@ -13,17 +13,21 @@
 
       <!-- Edit link committee start -->
       <div class="col">
-        <a href="/committees/<%= @committee.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit committee
-        </a>
+        <% if current_user == @committee.user %>
+          <a href="/committees/<%= @committee.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit committee
+          </a>
+        <% end %>
       </div>
       <!-- Edit link committee end -->
 
       <!-- Delete link committee start -->
       <div class="col">
-        <a href="/delete_committee/<%= @committee.id %>" class="btn btn-block btn-outline-secondary">
-          Delete committee
-        </a>
+        <% if current_user == @committee.user %>
+          <a href="/delete_committee/<%= @committee.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete committee
+          </a>
+        <% end %>
       </div>
       <!-- Delete link committee end -->
     </div>

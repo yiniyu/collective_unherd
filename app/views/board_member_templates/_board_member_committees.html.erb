@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_committee_from_board_members/<%= committee.id %>">
-          Delete
-        </a>
+        <%if current_user == committee.user %>
+          <a href="/delete_committee_from_board_member/<%= committee.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
