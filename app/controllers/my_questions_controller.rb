@@ -47,7 +47,7 @@ class MyQuestionsController < ApplicationController
     @my_question.committee_id = params.fetch("committee_id")
     @my_question.question_details = params.fetch("question_details")
     @my_question.notes = params.fetch("notes")
-    @my_question.user_id = params.fetch("user_id")
+    
 
     if @my_question.valid?
       @my_question.save
