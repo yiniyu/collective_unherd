@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :committees,
+             :dependent => :nullify
+
   has_many   :board_members,
              :dependent => :nullify
 
