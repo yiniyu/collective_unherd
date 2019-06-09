@@ -13,17 +13,21 @@
 
       <!-- Edit link board_member start -->
       <div class="col">
-        <a href="/board_members/<%= @board_member.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit board member
-        </a>
+        <% if current_user == @board_member.user %>
+          <a href="/board_members/<%= @board_member.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit board_member
+          </a>
+        <% end %>
       </div>
       <!-- Edit link board_member end -->
 
       <!-- Delete link board_member start -->
       <div class="col">
-        <a href="/delete_board_member/<%= @board_member.id %>" class="btn btn-block btn-outline-secondary">
-          Delete board member
-        </a>
+        <% if current_user == @board_member.user %>
+          <a href="/delete_board_member/<%= @board_member.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete board_member
+          </a>
+        <% end %>
       </div>
       <!-- Delete link board_member end -->
     </div>
