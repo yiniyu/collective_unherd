@@ -10,7 +10,7 @@ class CommitteesController < ApplicationController
   end
 
   def index
-    @committees = Committee.all
+    @committees = current_user.committees.page(params[:page]).per(10)
 
     render("committee_templates/index.html.erb")
   end
