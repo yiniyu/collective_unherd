@@ -6,6 +6,8 @@ class BoardMembersController < ApplicationController
   end
 
   def show
+    @committee = Committee.new
+    @response = Response.new
     @board_member = BoardMember.find(params.fetch("id_to_display"))
 
     render("board_member_templates/show.html.erb")

@@ -6,6 +6,7 @@ class MyQuestionsController < ApplicationController
   end
 
   def show
+    @response = Response.new
     @my_question = MyQuestion.find(params.fetch("id_to_display"))
 
     render("my_question_templates/show.html.erb")

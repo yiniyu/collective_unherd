@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/committees/new", { :controller => "committees", :action => "new_form" })
   post("/create_committee", { :controller => "committees", :action => "create_row" })
+  post("/create_committee_from_board_member", { :controller => "committees", :action => "create_row_from_board_member" })
 
   # READ
   get("/committees", { :controller => "committees", :action => "index" })
@@ -37,6 +38,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/responses/new", { :controller => "responses", :action => "new_form" })
   post("/create_response", { :controller => "responses", :action => "create_row" })
+  post("/create_response_from_my_question", { :controller => "responses", :action => "create_row_from_my_question" })
+  post("/create_response_from_board_member", { :controller => "responses", :action => "create_row_from_board_member" })
 
   # READ
   get("/responses", { :controller => "responses", :action => "index" })

@@ -33,6 +33,22 @@ class CommitteesController < ApplicationController
     end
   end
 
+  def create_row_from_board_member
+    @committee = Committee.new
+
+    @committee.name = params.fetch("name")
+    @committee.board_members_id = params.fetch("board_members_id")
+    @committee.user_id = params.fetch("user_id")
+
+    if @committee.valid?
+      @committee.save
+
+      redirect_to("/board_members/#{@committee.board_members_id}", notice: "Committee created successfully.")
+    else
+      render("committee_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @committee = Committee.find(params.fetch("prefill_with_id"))
 

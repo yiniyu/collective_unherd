@@ -34,6 +34,40 @@ class ResponsesController < ApplicationController
     end
   end
 
+  def create_row_from_board_member
+    @response = Response.new
+
+    @response.user_id = params.fetch("user_id")
+    @response.my_questions_id = params.fetch("my_questions_id")
+    @response.response = params.fetch("response")
+    @response.board_members_id = params.fetch("board_members_id")
+
+    if @response.valid?
+      @response.save
+
+      redirect_to("/board_members/#{@response.board_members_id}", notice: "Response created successfully.")
+    else
+      render("response_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_my_question
+    @response = Response.new
+
+    @response.user_id = params.fetch("user_id")
+    @response.my_questions_id = params.fetch("my_questions_id")
+    @response.response = params.fetch("response")
+    @response.board_members_id = params.fetch("board_members_id")
+
+    if @response.valid?
+      @response.save
+
+      redirect_to("/my_questions/#{@response.user_id}", notice: "Response created successfully.")
+    else
+      render("response_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @response = Response.find(params.fetch("prefill_with_id"))
 
