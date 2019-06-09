@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Committee resource:
+
+  # CREATE
+  get("/committees/new", { :controller => "committees", :action => "new_form" })
+  post("/create_committee", { :controller => "committees", :action => "create_row" })
+
+  # READ
+  get("/committees", { :controller => "committees", :action => "index" })
+  get("/committees/:id_to_display", { :controller => "committees", :action => "show" })
+
+  # UPDATE
+  get("/committees/:prefill_with_id/edit", { :controller => "committees", :action => "edit_form" })
+  post("/update_committee/:id_to_modify", { :controller => "committees", :action => "update_row" })
+
+  # DELETE
+  get("/delete_committee/:id_to_remove", { :controller => "committees", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
 
