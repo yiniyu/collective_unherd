@@ -60,7 +60,7 @@ class CommitteesController < ApplicationController
 
     @committee.name = params.fetch("name")
     @committee.board_members_id = params.fetch("board_members_id")
-    @committee.user_id = params.fetch("user_id")
+    
 
     if @committee.valid?
       @committee.save
