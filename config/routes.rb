@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "board_members#index"
   # Routes for the Committee resource:
 
   # CREATE
