@@ -10,7 +10,8 @@ class MyQuestionsController < ApplicationController
   end
 
   def index
-    @my_questions = MyQuestion.page(params[:page]).per(10)
+    @q = MyQuestion.ransack(params[:q])
+    @my_questions = @q.result(:distinct => true).includes(:responses, :user).page(params[:page]).per(10)
 
     render("my_question_templates/index.html.erb")
   end

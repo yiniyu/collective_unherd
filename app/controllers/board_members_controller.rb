@@ -10,7 +10,8 @@ class BoardMembersController < ApplicationController
   end
 
   def index
-    @board_members = current_user.board_members.page(params[:page]).per(10)
+    @q = current_user.board_members.ransack(params[:q])
+    @board_members = @q.result(:distinct => true).includes(:responses, :committees, :user).page(params[:page]).per(10)
 
     render("board_member_templates/index.html.erb")
   end
