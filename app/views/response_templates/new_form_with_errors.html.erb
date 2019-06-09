@@ -1,0 +1,80 @@
+<!-- Validation failure messages -->
+<% if @response.present? %>
+  <% if @response.errors.any? %>
+    <% @response.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new response
+</h1>
+
+
+<hr>
+
+<!-- Form response start -->
+<form action="/create_response" method="post">
+<!-- Form response end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @response.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for my_questions_id start -->
+  <div class="form-group">
+    <label for="my_questions_id">
+      My questions
+    </label>
+
+    <!-- Input for my_questions_id start -->
+    <input type="text" id="my_questions_id" name="my_questions_id" class="form-control" value="<%= @response.my_questions_id %>">
+    <!-- Input for my_questions_id end -->
+  </div>
+  <!-- Label and input for my_questions_id end -->
+
+  <!-- Label and input for response start -->
+  <div class="form-group">
+    <label for="response">
+      Response
+    </label>
+
+    <!-- Input for response start -->
+    <textarea id="response" name="response" class="form-control" rows="3"><%= @response.response %></textarea>
+    <!-- Input for response end -->
+  </div>
+  <!-- Label and input for response end -->
+
+  <!-- Label and input for board_members_id start -->
+  <div class="form-group">
+    <label for="board_members_id">
+      Board members
+    </label>
+
+    <!-- Input for board_members_id start -->
+    <input type="text" id="board_members_id" name="board_members_id" class="form-control" value="<%= @response.board_members_id %>">
+    <!-- Input for board_members_id end -->
+  </div>
+  <!-- Label and input for board_members_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create response
+  </button>
+</form>
+
+<hr>
+
+<a href="/responses">
+  Go back
+</a>

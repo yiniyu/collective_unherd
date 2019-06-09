@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Response #<%= @response.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/responses" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link response start -->
+      <div class="col">
+        <a href="/responses/<%= @response.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit response
+        </a>
+      </div>
+      <!-- Edit link response end -->
+
+      <!-- Delete link response start -->
+      <div class="col">
+        <a href="/delete_response/<%= @response.id %>" class="btn btn-block btn-outline-secondary">
+          Delete response
+        </a>
+      </div>
+      <!-- Delete link response end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @response.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        My questions
+      </dt>
+      <!-- Display my_questions_id start -->
+      <dd>
+        <%= @response.my_questions_id %>
+      </dd>
+      <!-- Display my_questions_id end -->
+
+      <dt>
+        Response
+      </dt>
+      <!-- Display response start -->
+      <dd>
+        <%= @response.response %>
+      </dd>
+      <!-- Display response end -->
+
+      <dt>
+        Board members
+      </dt>
+      <!-- Display board_members_id start -->
+      <dd>
+        <%= @response.board_members_id %>
+      </dd>
+      <!-- Display board_members_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@response.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@response.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

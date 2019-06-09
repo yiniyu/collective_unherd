@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Response resource:
+
+  # CREATE
+  get("/responses/new", { :controller => "responses", :action => "new_form" })
+  post("/create_response", { :controller => "responses", :action => "create_row" })
+
+  # READ
+  get("/responses", { :controller => "responses", :action => "index" })
+  get("/responses/:id_to_display", { :controller => "responses", :action => "show" })
+
+  # UPDATE
+  get("/responses/:prefill_with_id/edit", { :controller => "responses", :action => "edit_form" })
+  post("/update_response/:id_to_modify", { :controller => "responses", :action => "update_row" })
+
+  # DELETE
+  get("/delete_response/:id_to_remove", { :controller => "responses", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the My question resource:
 
   # CREATE
