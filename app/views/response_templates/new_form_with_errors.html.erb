@@ -63,7 +63,7 @@
     </label>
 
     <!-- Input for board_members_id start -->
-    <input type="text" id="board_members_id" name="board_members_id" class="form-control" value="<%= @response.board_members_id %>">
+    <%= select_tag(:board_members_id, options_from_collection_for_select(BoardMember.all, :id, :name, @response.board_members_id), :class => "form-control") %>
     <!-- Input for board_members_id end -->
   </div>
   <!-- Label and input for board_members_id end -->
