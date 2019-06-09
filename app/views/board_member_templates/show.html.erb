@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Board member #<%= @board_member.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/board_members" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link board_member start -->
+      <div class="col">
+        <a href="/board_members/<%= @board_member.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit board member
+        </a>
+      </div>
+      <!-- Edit link board_member end -->
+
+      <!-- Delete link board_member start -->
+      <div class="col">
+        <a href="/delete_board_member/<%= @board_member.id %>" class="btn btn-block btn-outline-secondary">
+          Delete board member
+        </a>
+      </div>
+      <!-- Delete link board_member end -->
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @board_member.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Committee
+      </dt>
+      <!-- Display committee_id start -->
+      <dd>
+        <%= @board_member.committee_id %>
+      </dd>
+      <!-- Display committee_id end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @board_member.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@board_member.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@board_member.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

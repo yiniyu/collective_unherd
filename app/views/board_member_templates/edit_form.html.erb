@@ -1,0 +1,56 @@
+<h1>
+  Edit board member #<%= @board_member.id %>
+</h1>
+
+<hr>
+
+<!-- Form board_member start -->
+<form action="/update_board_member/<%= @board_member.id %>" method="post">
+<!-- Form board_member end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <textarea id="name" name="name" class="form-control" rows="3"><%= @board_member.name %></textarea>
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for committee_id start -->
+  <div class="form-group">
+    <label for="committee_id">
+      Committee
+    </label>
+
+    <!-- Input for committee_id start -->
+    <input type="text" id="committee_id" name="committee_id" class="form-control" value="<%= @board_member.committee_id %>">
+    <!-- Input for committee_id end -->
+  </div>
+  <!-- Label and input for committee_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @board_member.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update board member
+  </button>
+</form>
+
+<hr>
+
+<a href="/board_members">
+  Go back
+</a>
