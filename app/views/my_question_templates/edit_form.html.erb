@@ -1,0 +1,68 @@
+<h1>
+  Edit my question #<%= @my_question.id %>
+</h1>
+
+<hr>
+
+<!-- Form my_question start -->
+<form action="/update_my_question/<%= @my_question.id %>" method="post">
+<!-- Form my_question end -->
+
+  <!-- Label and input for committee_id start -->
+  <div class="form-group">
+    <label for="committee_id">
+      Committee
+    </label>
+
+    <!-- Input for committee_id start -->
+    <input type="text" id="committee_id" name="committee_id" class="form-control" value="<%= @my_question.committee_id %>">
+    <!-- Input for committee_id end -->
+  </div>
+  <!-- Label and input for committee_id end -->
+
+  <!-- Label and input for question_details start -->
+  <div class="form-group">
+    <label for="question_details">
+      Question details
+    </label>
+
+    <!-- Input for question_details start -->
+    <textarea id="question_details" name="question_details" class="form-control" rows="3"><%= @my_question.question_details %></textarea>
+    <!-- Input for question_details end -->
+  </div>
+  <!-- Label and input for question_details end -->
+
+  <!-- Label and input for notes start -->
+  <div class="form-group">
+    <label for="notes">
+      Notes
+    </label>
+
+    <!-- Input for notes start -->
+    <textarea id="notes" name="notes" class="form-control" rows="3"><%= @my_question.notes %></textarea>
+    <!-- Input for notes end -->
+  </div>
+  <!-- Label and input for notes end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @my_question.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update my question
+  </button>
+</form>
+
+<hr>
+
+<a href="/my_questions">
+  Go back
+</a>

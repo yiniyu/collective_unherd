@@ -1,0 +1,69 @@
+<h1>
+  Add a new my question
+</h1>
+
+
+<hr>
+
+<!-- Form my_question start -->
+<form action="/create_my_question" method="post">
+<!-- Form my_question end -->
+
+  <!-- Label and input for committee_id start -->
+  <div class="form-group">
+    <label for="committee_id">
+      Committee
+    </label>
+
+    <!-- Input for committee_id start -->
+    <input type="text" id="committee_id" name="committee_id" class="form-control">
+    <!-- Input for committee_id end -->
+  </div>
+  <!-- Label and input for committee_id end -->
+
+  <!-- Label and input for question_details start -->
+  <div class="form-group">
+    <label for="question_details">
+      Question details
+    </label>
+
+    <!-- Input for question_details start -->
+    <textarea id="question_details" name="question_details" class="form-control" rows="3"></textarea>
+    <!-- Input for question_details end -->
+  </div>
+  <!-- Label and input for question_details end -->
+
+  <!-- Label and input for notes start -->
+  <div class="form-group">
+    <label for="notes">
+      Notes
+    </label>
+
+    <!-- Input for notes start -->
+    <textarea id="notes" name="notes" class="form-control" rows="3"></textarea>
+    <!-- Input for notes end -->
+  </div>
+  <!-- Label and input for notes end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create my question
+  </button>
+</form>
+
+<hr>
+
+<a href="/my_questions">
+  Go back
+</a>

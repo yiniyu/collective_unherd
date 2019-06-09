@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the My question resource:
+
+  # CREATE
+  get("/my_questions/new", { :controller => "my_questions", :action => "new_form" })
+  post("/create_my_question", { :controller => "my_questions", :action => "create_row" })
+
+  # READ
+  get("/my_questions", { :controller => "my_questions", :action => "index" })
+  get("/my_questions/:id_to_display", { :controller => "my_questions", :action => "show" })
+
+  # UPDATE
+  get("/my_questions/:prefill_with_id/edit", { :controller => "my_questions", :action => "edit_form" })
+  post("/update_my_question/:id_to_modify", { :controller => "my_questions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_my_question/:id_to_remove", { :controller => "my_questions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Board member resource:
 
   # CREATE
