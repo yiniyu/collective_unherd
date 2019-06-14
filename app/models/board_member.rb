@@ -4,15 +4,15 @@ class BoardMember < ApplicationRecord
   belongs_to :user,
              :counter_cache => true
 
-  has_many   :committees,
-             :foreign_key => "board_members_id",
-             :dependent => :nullify
-
   has_many   :responses,
              :foreign_key => "board_members_id",
              :dependent => :nullify
 
   # Indirect associations
+
+  has_one    :committee,
+             :through => :user,
+             :source => :committees
 
   # Validations
 

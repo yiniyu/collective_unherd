@@ -2,6 +2,18 @@
   <p class="lead">Narrow results:</p>
 
   <div class="form-group">
+    <%= f.label :board_members_id, "Board members" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :board_members_id_gteq, :class => "form-control", :placeholder => "Board members greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :board_members_id_lteq, :class => "form-control", :placeholder => "Board members less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.label :name_cont, "Name contains" %>
     <%= f.text_field :name_cont, :class => "form-control", :placeholder => "Name contains" %>
   </div>
@@ -48,13 +60,13 @@
 
 
   <div class="form-group">
-    <%= f.label :board_members_name_cont, "BoardMember name contains" %>
-    <%= f.text_field :board_members_name_cont, :class => "form-control", :placeholder => "BoardMember name contains" %>
+    <%= f.label :user_email_cont, "User email contains" %>
+    <%= f.text_field :user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :user_email_cont, "User email contains" %>
-    <%= f.text_field :user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
+    <%= f.label :board_member_name_cont, "BoardMember name contains" %>
+    <%= f.text_field :board_member_name_cont, :class => "form-control", :placeholder => "BoardMember name contains" %>
   </div>
 
 

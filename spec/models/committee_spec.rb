@@ -6,11 +6,11 @@ RSpec.describe Committee, type: :model do
 
     it { should belong_to(:user) }
 
-    it { should belong_to(:board_members) }
-
     end
 
     describe "InDirect Associations" do
+
+    it { should have_one(:board_member) }
 
     end
 

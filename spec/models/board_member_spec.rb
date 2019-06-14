@@ -6,13 +6,13 @@ RSpec.describe BoardMember, type: :model do
 
     it { should belong_to(:user) }
 
-    it { should have_many(:committees) }
-
     it { should have_many(:responses) }
 
     end
 
     describe "InDirect Associations" do
+
+    it { should have_one(:committee) }
 
     end
 

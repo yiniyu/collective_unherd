@@ -4,11 +4,11 @@ class Committee < ApplicationRecord
   belongs_to :user,
              :counter_cache => true
 
-  belongs_to :board_members,
-             :class_name => "BoardMember",
-             :counter_cache => true
-
   # Indirect associations
+
+  has_one    :board_member,
+             :through => :user,
+             :source => :board_members
 
   # Validations
 

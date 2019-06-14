@@ -40,11 +40,7 @@
         Board members
       </dt>
       <dd>
-        <% if @committee.board_members.present? %>
-          <a href="/board_members/<%= @committee.board_members_id %>">
-            <%= @committee.board_members.name %>
-          </a>
-        <% end %>
+        <%= @committee.board_members_id %>
       </dd>
 
       <dt>
