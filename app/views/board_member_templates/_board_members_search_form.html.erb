@@ -60,21 +60,26 @@
 
 
   <div class="form-group">
+    <%= f.label :user_email_cont, "User email contains" %>
+    <%= f.text_field :user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :created_at, "Committee Created at" %>
     <div class="row">
       <div class='col-md-6 mb-1'>
-        <div class='input-group date' id='committeesgteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :committees_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Committee Created at greater than or equal to", :data => {:target => '#committeesgteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#committeesgteqcreated_atPicker' data-toggle="datetimepicker">
+        <div class='input-group date' id='committeegteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :committee_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Committee Created at greater than or equal to", :data => {:target => '#committeegteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#committeegteqcreated_atPicker' data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
           </div>
         </div>
       </div>
 
       <div class='col-md-6'>
-        <div class='input-group date' id='committeeslteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :committees_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Committee Created at less than or equal to", :data => {:target => '#committeeslteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#committeeslteqcreated_atPicker' data-toggle="datetimepicker">
+        <div class='input-group date' id='committeelteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :committee_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Committee Created at less than or equal to", :data => {:target => '#committeelteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#committeelteqcreated_atPicker' data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
           </div>
         </div>
@@ -83,26 +88,21 @@
   </div>
   <script type="text/javascript">
       $(function () {
-          $('#committeesgteqcreated_atPicker').datetimepicker({
+          $('#committeegteqcreated_atPicker').datetimepicker({
               format: 'YYYY-MM-DD hh:mm:SS'
           });
-          $('#committeeslteqcreated_atPicker').datetimepicker({
+          $('#committeelteqcreated_atPicker').datetimepicker({
               useCurrent: false,
               format: 'YYYY-MM-DD hh:mm:SS'
           });
-          $('#committeesgteqcreated_atPicker').on("dp.change", function (e) {
-              $('#committeeslteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
+          $('#committeegteqcreated_atPicker').on("dp.change", function (e) {
+              $('#committeelteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
           });
-          $('#committeeslteqcreated_atPicker').on("dp.change", function (e) {
-              $('#committeesgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
+          $('#committeelteqcreated_atPicker').on("dp.change", function (e) {
+              $('#committeegteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
           });
       });
   </script>
-
-  <div class="form-group">
-    <%= f.label :user_email_cont, "User email contains" %>
-    <%= f.text_field :user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
-  </div>
 
 
   <%= f.submit :class => "btn btn-primary btn-block mb-1" %>

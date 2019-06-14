@@ -11,7 +11,7 @@ class CommitteesController < ApplicationController
 
   def index
     @q = current_user.committees.ransack(params[:q])
-    @committees = @q.result(:distinct => true).includes(:board_members, :user).page(params[:page]).per(10)
+    @committees = @q.result(:distinct => true).includes(:user, :board_member).page(params[:page]).per(10)
 
     render("committee_templates/index.html.erb")
   end
@@ -44,22 +44,6 @@ class CommitteesController < ApplicationController
     end
   end
 
-  def create_row_from_board_member
-    @committee = Committee.new
-
-    @committee.name = params.fetch("name")
-    @committee.board_members_id = params.fetch("board_members_id")
-    @committee.user_id = params.fetch("user_id")
-
-    if @committee.valid?
-      @committee.save
-
-      redirect_to("/board_members/#{@committee.board_members_id}", notice: "Committee created successfully.")
-    else
-      render("committee_templates/new_form_with_errors.html.erb")
-    end
-  end
-
   def edit_form
     @committee = Committee.find(params.fetch("prefill_with_id"))
 
@@ -80,14 +64,6 @@ class CommitteesController < ApplicationController
     else
       render("committee_templates/edit_form_with_errors.html.erb")
     end
-  end
-
-  def destroy_row_from_board_members
-    @committee = Committee.find(params.fetch("id_to_remove"))
-
-    @committee.destroy
-
-    redirect_to("/board_members/#{@committee.board_members_id}", notice: "Committee deleted successfully.")
   end
 
   def destroy_row_from_user

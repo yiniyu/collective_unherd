@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   # CREATE
   get("/committees/new", { :controller => "committees", :action => "new_form" })
   post("/create_committee", { :controller => "committees", :action => "create_row" })
-  post("/create_committee_from_board_member", { :controller => "committees", :action => "create_row_from_board_member" })
 
   # READ
   get("/committees", { :controller => "committees", :action => "index" })
@@ -20,7 +19,6 @@ Rails.application.routes.draw do
   # DELETE
   get("/delete_committee/:id_to_remove", { :controller => "committees", :action => "destroy_row" })
   get("/delete_committee_from_user/:id_to_remove", { :controller => "committees", :action => "destroy_row_from_user" })
-  get("/delete_committee_from_board_members/:id_to_remove", { :controller => "committees", :action => "destroy_row_from_board_members" })
 
   #------------------------------
 
